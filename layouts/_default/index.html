@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+	{{ partial "site_header.html" . }}
+
+	<p>
+		The official unofficial student managed website of <b>Department of Computer Science (DUCS), University of Delhi</b>.
+	</p>
+
+	<hr>
+
+	{{ partial "events_section.html" . }}
+
+	<hr>
+
+	{{ partial "srijan_section.html" . }}
+
+	<hr>
+
+	{{ partial "coding_club_section.html" . }}
+
+	{{ partial "site_footer.html" . }}
+
+{{ end }}

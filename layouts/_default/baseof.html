@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
+
+	<link rel="stylesheet" href="{{ `css/styles.css` | relURL }}">
+
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+<body class="terminal">
+	<div class="container">
+
+		<!-- Code that all your templates share, like a header -->
+		{{ block "main" . }}
+			<!-- The part of the page that begins to differ between templates -->
+		{{ end }}
+
+	</div>
+</body>
+</html>

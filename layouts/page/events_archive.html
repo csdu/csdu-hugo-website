@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+	{{ partial "site_header.html" . }}
+
+	<h1>Events Archive</h1>
+
+	<p>This place is meant for holding record of events that already happend.</p>
+
+	<hr>
+
+	{{ range .Site.Data.events }}
+		{{ range . }} 
+			<!-- Getting archived events -->
+			{{ $events := where . "archived" "==" true }}
+			<!-- Sorting events by "date" for single day event -->
+			{{ $events := sort $events "date" "desc" }}
+			<!-- Sorting events by "end_date" for mutiple days events -->
+			{{ $events := sort $events "end_date" "desc" }}
+			{{ range $events }}
+
+				{{ partial "event_card.html" . }}
+				<br>
+
+			{{ else }}
+				<p>Not available.</p>
+			{{ end }}
+		{{ else }}
+			<!-- Events list is empty -->
+			<p>Not available.</p>
+		{{ end }}
+	{{ end }}
+
+	{{ partial "site_footer.html" . }}
+
+{{ end }}

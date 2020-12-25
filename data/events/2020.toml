@@ -1,0 +1,20 @@
+[[events]]
+title = "Sankalan 2020"
+body = """
+	Sankalan is the annual tech fest of Department Computer Science, University of Delhi (DUCS).
+"""
+start_date = 2020-02-09
+end_date = 2020-02-16
+website = "https://sankalan.now.sh"
+	[events.socials]
+	facebook = "facebook"
+	twitter = "twitter"
+
+[[events]]
+title = "Chakravyuh 2020"
+body = """
+	Chakravyuh is the online Treasure hunt organised by students of Department of Computer Science, University of Delhi.
+"""
+start_date = 2020-02-10
+end_date = 2020-02-13
+website = "https://github.com/csdu/chakravyuh"

@@ -1,0 +1,27 @@
+<section>
+	<header><h1 id="Events">Events</h1></header>
+	<div class="terminal-timeline">
+
+		{{ range .Site.Data.events }}
+			{{ range . }} 
+				<!-- Getting not archived events -->
+				{{ $events := where . "archived" "!=" true }}
+				<!-- Sorting events by "date" for single day event -->
+				{{ $events := sort $events "date" "desc" }}
+				<!-- Sorting events by "end_date" for mutiple days events -->
+				{{ $events := sort $events "end_date" "desc" }}
+				{{ range $events }}
+
+					{{ partial "event_card.html" . }}
+
+				{{ else }}
+					<p>Not available.</p>
+				{{ end }}
+			{{ else }}
+				<!-- Events list is empty -->
+				<p>Not available.</p>
+			{{ end }}
+		{{ end }}
+
+	</div>
+</section>

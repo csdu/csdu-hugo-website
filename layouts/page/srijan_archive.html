@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+	{{ partial "site_header.html" . }}
+
+	<h1>Srijan Archive</h1>
+
+	<p>This place is meant for holding previous volumes of srijan magazine.</p>
+
+	<hr>
+
+	{{ range .Site.Data.srijan }}
+		{{ range sort (where . "current" "!=" true) "year" "desc" }}
+			<div>
+				<h1>Volume {{ .volume }} ({{ .year }})</h1>
+				<p><a href="{{ .link }}" target="_blank">{{ .link }}</a></p>
+			</div>
+		{{ end }}
+	{{ else }}
+		<p>Not available.</p>
+	{{ end }}
+
+	{{ partial "site_footer.html" . }}
+
+{{ end }}

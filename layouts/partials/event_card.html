@@ -1,0 +1,31 @@
+<div class="terminal-card">
+  	<header>{{ .title }}</header>
+  	<div>
+		<p>{{ .body }}</p>
+
+		<nav>
+			<ul>
+				{{ with .date }}
+					<li>{{ .Format "January 2, 2006" }}</li>
+				{{ end }}
+				{{ if and (isset . "start_date") (isset . "end_date") }}
+					<li>
+						{{ .start_date.Format "January 2, 2006" }} - 
+						{{ .end_date.Format "January 2, 2006" }}
+					</li>
+				{{ end }}
+				<li><a href="{{ .website }}">{{ .website }}</a></li>
+				{{ with .socials }}
+					<li style="margin-top: 1rem">
+						Socials
+						<ul>
+							{{ range $key, $val := . }}
+								<li><a href="{{ $val }}">{{ $key }}</a></li>
+							{{ end }}
+						</ul>
+					</li>
+				{{ end }}
+			</ul>
+		</nav>
+  	</div>
+</div>

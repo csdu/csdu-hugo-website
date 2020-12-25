@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+	{{ partial "site_header.html" . }}
+
+	<h1>Archive</h1>
+
+	<p>This is the place where you will find previous content of this website.</p>
+
+	<p><a href="{{ `/archive/events` | relURL }}">Events Archive</a></p>
+	<p><a href="{{ `/archive/srijan` | relURL }}">Srijan Archive</a></p>
+
+	{{ partial "site_footer.html" . }}
+
+{{ end }}
